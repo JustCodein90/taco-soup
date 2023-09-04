@@ -71,8 +71,9 @@ let numbers = ""
 for (let index = 2; index <= 8; index = index + 2) {
     numbers = numbers + index + " "; // numbers = `${numbers + index} `; Template String
 } 
+numbers += "Who do we appericate"
 
-console.log(`${numbers} Who do we appreciate?!`)
+console.log(numbers)
 
 
 
@@ -83,13 +84,14 @@ const sentenceArray = ["The", "cow", "danced", "through", "the", "trees", "in", 
 
 let sentence = "";
 for (let i = 0; i < sentenceArray.length; i++){
-    sentence = sentence + sentenceArray[i] + " ";
+    sentence = sentence + sentenceArray[i] + " "; // sentence += `${sentenceArray[i] `
     
     /* adds 1 to each value in index making it start at 1, % find the remainder of each
-    index by 4 then runs if equal to 0 */
-    if ((i + 1) % 4 === 0) {
+    index by 4 then runs if equal to 0*/
+    if ((i + 1) % 3 === 0) {
         sentence = sentence + "MOOOO "; 
     }
+    
 }
 
 console.log(sentence);
@@ -129,6 +131,14 @@ const beatles = {
     ]
 }
 
-console.log(`${beatles.members[0].name} was in the Beatles from ${beatles.history.formed} 
-to ${beatles.history.disbanded}. He was born in ${beatles.members[0].birth}. He contributed 
-heavily to the ${beatles.albums[0]} Album.`)
+for (let i=0; i < 4; i++) {
+    let string = `${beatles.members[i].name} was in the Beatles from ${beatles.history.formed} 
+    to ${beatles.history.disbanded}. He was born in ${beatles.members[i].birth}. He contributed 
+    heavily to the ${beatles.albums[i]} Album.`
+
+    if(beatles.members[i].death) {
+        string += `They died in ${beatles.members[i].death}.`
+    }
+    console.log(string)
+    console.log()
+}
